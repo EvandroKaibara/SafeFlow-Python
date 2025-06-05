@@ -16,7 +16,7 @@ alertas = [
     {"id": 1, "mensagem": "Rota bloqueada na Avenida B", "tipo": "visual+sonoro", "rota_id": 2}
 ]
 
-def mostrar_rotas():
+def mostrarRotas():
     try:
         print("\nROTAS DISPONÍVEIS:")
         for rota in rotas:
@@ -24,7 +24,7 @@ def mostrar_rotas():
     except Exception as e:
         print(f"Erro ao exibir rotas: {e}")
 
-def mostrar_abrigos():
+def mostrarAbrigos():
     try:
         print("\nABRIGOS ATIVOS:")
         ativos = sorted([a for a in abrigos if a['ativo']], key=lambda x: (x['distancia_km'], x['ocupacao']))
@@ -33,7 +33,7 @@ def mostrar_abrigos():
     except Exception as e:
         print(f"Erro ao exibir abrigos: {e}")
 
-def mostrar_alertas():
+def mostrarAlertas():
     try:
         print("\nALERTAS ATIVOS:")
         for alerta in alertas:
@@ -41,7 +41,7 @@ def mostrar_alertas():
     except Exception as e:
         print(f"Erro ao exibir alertas: {e}")
 
-def mostrar_dicas():
+def mostrarDicas():
     try:
         dicas = [
             "Mantenha documentos importantes em sacos plásticos.",
@@ -55,7 +55,7 @@ def mostrar_dicas():
     except Exception as e:
         print(f"Erro ao exibir dicas: {e}")
 
-def encontrar_melhor_abrigo():
+def encontrarMelhorAbrigo():
     try:
         ativos = [a for a in abrigos if a['ativo']]
         if not ativos:
@@ -85,15 +85,15 @@ while True:
         opcao = input("Escolha uma opção: ")
 
         if opcao == '1':
-            mostrar_rotas()
+            mostrarRotas()
         elif opcao == '2':
-            mostrar_abrigos()
+            mostrarAbrigos()
         elif opcao == '3':
-            mostrar_alertas()
+            mostrarAlertas()
         elif opcao == '4':
-            mostrar_dicas()
+            mostrarDicas()
         elif opcao == '5':
-            encontrar_melhor_abrigo()
+            encontrarMelhorAbrigo()
         elif opcao == '0':
             print("Encerrando o sistema.")
             break
